@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, MenuController, NavController, Platform } from 'ionic-angular';
 
 import { TranslateService } from '@ngx-translate/core';
+import {LoginPage} from "../login/login";
 
 export interface Slide {
   title: string;
@@ -18,6 +19,7 @@ export class TutorialPage {
   slides: Slide[];
   showSkip = true;
   dir: string = 'ltr';
+  public checkfred  : any;
 
   constructor(public navCtrl: NavController, public menu: MenuController, translate: TranslateService, public platform: Platform) {
     this.dir = platform.dir();
@@ -50,11 +52,34 @@ export class TutorialPage {
       });
   }
 
+  ionViewDidLoad() {
+    this.checkfred = 'cool';
+
+    if(this.checkfreds === 'cool'){
+
+      this.navCtrl.push(LoginPage);
+
+    }else{
+      this.navCtrl.setRoot('WelcomePage', {}, {
+        animate: true,
+        direction: 'forward'
+      });
+    }
+
+  }
+
   startApp() {
-    this.navCtrl.setRoot('WelcomePage', {}, {
-      animate: true,
-      direction: 'forward'
-    });
+
+    // if(this.checkfreds === 'cool'){
+    //
+    //   this.navCtrl.push(LoginPage);
+    // }else{
+    //   this.navCtrl.setRoot('WelcomePage', {}, {
+    //     animate: true,
+    //     direction: 'forward'
+    //   });
+    // }
+
   }
 
   onSlideChangeStart(slider) {
