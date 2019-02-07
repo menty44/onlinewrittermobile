@@ -36,37 +36,37 @@ export class TutorialPage {
           {
             title: values.TUTORIAL_SLIDE1_TITLE,
             description: values.TUTORIAL_SLIDE1_DESCRIPTION,
-            image: 'assets/img/ica-slidebox-img-1.png',
+            image: 'assets/img/11.jpg',
           },
           {
             title: values.TUTORIAL_SLIDE2_TITLE,
             description: values.TUTORIAL_SLIDE2_DESCRIPTION,
-            image: 'assets/img/ica-slidebox-img-2.png',
+            image: 'assets/img/12.jpg',
           },
           {
             title: values.TUTORIAL_SLIDE3_TITLE,
             description: values.TUTORIAL_SLIDE3_DESCRIPTION,
-            image: 'assets/img/ica-slidebox-img-3.png',
+            image: 'assets/img/3.gif',
           }
         ];
       });
   }
 
-  ionViewDidLoad() {
-    this.checkfred = 'cool';
-
-    if(this.checkfreds === 'cool'){
-
-      this.navCtrl.push(LoginPage);
-
-    }else{
-      this.navCtrl.setRoot('WelcomePage', {}, {
-        animate: true,
-        direction: 'forward'
-      });
-    }
-
-  }
+  // ionViewDidLoad() {
+  //   // this.checkfred = 'cool';
+  //   //
+  //   // if(this.checkfred === 'cool'){
+  //   //
+  //   //   this.navCtrl.push(LoginPage);
+  //   //
+  //   // }else{
+  //     this.navCtrl.setRoot('WelcomePage', {}, {
+  //       animate: true,
+  //       direction: 'forward'
+  //     // });
+  //   // }
+  //
+  // }
 
   startApp() {
 
@@ -74,10 +74,10 @@ export class TutorialPage {
     //
     //   this.navCtrl.push(LoginPage);
     // }else{
-    //   this.navCtrl.setRoot('WelcomePage', {}, {
-    //     animate: true,
-    //     direction: 'forward'
-    //   });
+      this.navCtrl.setRoot('WelcomePage', {}, {
+        animate: true,
+        direction: 'forward'
+      });
     // }
 
   }
