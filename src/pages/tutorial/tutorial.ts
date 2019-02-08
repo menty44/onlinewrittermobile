@@ -38,7 +38,7 @@ export class TutorialPage {
           {
             title: values.TUTORIAL_SLIDE1_TITLE,
             description: values.TUTORIAL_SLIDE1_DESCRIPTION,
-            image: 'assets/img/11.jpg',
+            image: 'assets/img/logo1.png',
           },
           {
             title: values.TUTORIAL_SLIDE2_TITLE,
@@ -76,10 +76,10 @@ export class TutorialPage {
     //
     //   this.navCtrl.push(LoginPage);
     // }else{
-    //   this.navCtrl.setRoot('WelcomePage', {}, {
-    //     animate: true,
-    //     direction: 'forward'
-    //   });
+      this.navCtrl.setRoot('WelcomePage', {}, {
+        animate: true,
+        direction: 'forward'
+      });
     // }
 
   }
