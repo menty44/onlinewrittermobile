@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, MenuController, NavController, Platform } from 'ionic-angular';
 
 import { TranslateService } from '@ngx-translate/core';
+import {ContentPage} from "../content/content";
+import {LoginPage} from "../login/login";
 // import { SignupPage } from "../signup/signup";
 
 export interface Slide {
@@ -53,18 +55,18 @@ export class TutorialPage {
   }
 
   ionViewDidLoad() {
-    // this.checkfred = 'cool';
-    //
-    // if(this.checkfred === 'cool'){
-    //
-    //   this.navCtrl.push(SignupPage);
-    //
-    // }else{
-    //   this.navCtrl.setRoot('WelcomePage', {}, {
-    //     animate: true,
-    //     direction: 'forward'
-    //   });
-    // }
+    this.checkfred = 'cool';
+
+    if(this.checkfred === 'cool'){
+
+      this.navCtrl.push(LoginPage);
+
+    }else{
+      this.navCtrl.setRoot('WelcomePage', {}, {
+        animate: true,
+        direction: 'forward'
+      });
+    }
 
   }
 
@@ -74,10 +76,10 @@ export class TutorialPage {
     //
     //   this.navCtrl.push(LoginPage);
     // }else{
-      this.navCtrl.setRoot('WelcomePage', {}, {
-        animate: true,
-        direction: 'forward'
-      });
+    //   this.navCtrl.setRoot('WelcomePage', {}, {
+    //     animate: true,
+    //     direction: 'forward'
+    //   });
     // }
 
   }
