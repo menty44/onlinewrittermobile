@@ -1,3 +1,15 @@
+<style>
+  .content-md {
+    color: #1621dd;
+    background-color: #ffffff;
+  }
+  .item  {
+    background: red !important;
+    padding-right: 22%;
+  }
+
+</style>
+
 <ion-header>
 
   <ion-navbar>
@@ -7,13 +19,13 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content >
   <img src="assets/img/logo2.png">
   <form (submit)="doLogin()">
     <ion-list>
 
-      <ion-item>
-        <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
+      <ion-item class="item">
+        <ion-label ><ion-icon name="ios-person-outline" item-left></ion-icon>{{ 'EMAIL' | translate }}</ion-label>
         <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
       </ion-item>
 
@@ -27,7 +39,7 @@
       -->
 
       <ion-item>
-        <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
+        <ion-label><ion-icon name="ios-lock-outline" item-left></ion-icon>{{ 'PASSWORD' | translate }}</ion-label>
         <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
       </ion-item>
 
