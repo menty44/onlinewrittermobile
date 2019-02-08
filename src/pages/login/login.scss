@@ -1,2 +1,8 @@
 page-login {
+  .md,.ios,.wp{
+    .ion_input{
+      border-bottom: none;
+      box-shadow: none;
+    }
+  }
 }

@@ -1,15 +1,6 @@
 <style>
-  .content-md {
-    color: #1621dd;
-    background-color: #ffffff;
-  }
-  .item  {
-    background: red !important;
-    padding-right: 22%;
-  }
 
 </style>
-
 <ion-header>
 
   <ion-navbar>
@@ -22,24 +13,18 @@
 <ion-content >
   <img src="assets/img/logo2.png">
   <form (submit)="doLogin()">
-    <ion-list>
+    <!--<ion-list>-->
 
-      <ion-item class="item">
-        <ion-label ><ion-icon name="ios-person-outline" item-left></ion-icon>{{ 'EMAIL' | translate }}</ion-label>
-        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+      <ion-item >
+        <ion-label ><ion-icon name="ios-person-outline" item-left>
+        </ion-icon>{{ 'EMAIL' | translate }}</ion-label>
+        {{ 'EMAIL' | translate }}
+      <ion-input placeholder="{{ 'EMAIL' | translate }}"type="email" [(ngModel)]="account.email" name="email"></ion-input>
       </ion-item>
 
-      <!--
-      Want to use a Username instead of an Email? Here you go:
 
       <ion-item>
-        <ion-label floating>{{ 'USERNAME' | translate }}</ion-label>
-        <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>
-      </ion-item>
-      -->
-
-      <ion-item>
-        <ion-label><ion-icon name="ios-lock-outline" item-left></ion-icon>{{ 'PASSWORD' | translate }}</ion-label>
+        <ion-label  position="floating"><ion-icon name="ios-lock-outline" item-left></ion-icon>{{ 'PASSWORD' | translate }}</ion-label>
         <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
       </ion-item>
 
@@ -47,6 +32,6 @@
         <button ion-button color="primary" block>{{ 'LOGIN_BUTTON' | translate }}</button>
       </div>
 
-    </ion-list>
+    <!--</ion-list>-->
   </form>
 </ion-content>
