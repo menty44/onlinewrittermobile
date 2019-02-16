@@ -84,7 +84,7 @@
 
 
 <ion-content class="">
-    <ion-card class="scan">
+    <ion-card class="scan" (click)="pushScan()">
         <ion-card-header >
             <h1 style="color: white!important;">Scan Products <ion-icon style="float: right!important;color: white!important;" name="qr-scanner"></ion-icon></h1>
         </ion-card-header>
@@ -93,7 +93,7 @@
         </ion-card-content>
     </ion-card>
 
-    <ion-card class="cart">
+    <ion-card class="cart" (click)="pushCart()">
         <ion-card-header >
             <h1 style="color: white!important;">View Cart
                 <ion-badge style="background: #127dff;color: #ecfff2" item-end>2 items</ion-badge>
@@ -104,7 +104,7 @@
         </ion-card-content>
     </ion-card>
 
-    <ion-card class="payment">
+    <ion-card class="payment" (click)="pushPayment()">
         <ion-card-header >
             <h1 style="color: white!important;">Payment History <ion-icon style="float: right!important;color: white!important;" name="cart"></ion-icon></h1>
         </ion-card-header>
@@ -113,7 +113,7 @@
         </ion-card-content>
     </ion-card>
 
-    <ion-card class="reports">
+    <ion-card class="reports" (click)="pushReports()">
         <ion-card-header >
             <h1 style="color: white!important;">Reports <ion-icon style="float: right!important;color: white!important;" name="analytics"></ion-icon></h1>
         </ion-card-header>
@@ -122,7 +122,7 @@
         </ion-card-content>
     </ion-card>
 
-    <ion-card class="profile">
+    <ion-card class="profile" (click)="pushProfile()">
         <ion-card-header >
             <h1 style="color: white!important;">Profile <ion-icon style="float: right!important;color: white!important;" name="contact"></ion-icon></h1>
         </ion-card-header>
@@ -131,7 +131,7 @@
         </ion-card-content>
     </ion-card>
 
-    <ion-card class="contact">
+    <ion-card class="contact" (click)="pushContactus()">
         <ion-card-header >
             <h1 style="color: white!important;">Contact Us <ion-icon style="float: right!important;color: white!important;" name="send"></ion-icon></h1>
         </ion-card-header>

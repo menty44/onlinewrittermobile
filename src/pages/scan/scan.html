@@ -1,18 +1,51 @@
-<!--
-  Generated template for the ScanPage page.
+<style>
+    .splash-bg {
+        position: relative;
+        /*background: url("../assets/img/splashbg.png") no-repeat transparent;*/
+        background: dodgerblue;
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-size: cover;
+        height: 45px;
+        z-index: 1;
+        -webkit-animation: animatedBackground 40s linear infinite;
+        animation: animatedBackground 20s linear infinite;
+    }
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
+    .reports {
+        background-image: linear-gradient(to right bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    }
+    .contact {
+        background-image: linear-gradient(to right bottom, #f3052b, #ff0056, #ff0084, #f300b8, #cc12eb);
+    }
+</style>
 <ion-header>
 
   <ion-navbar>
-    <ion-title>scan</ion-title>
+    <ion-title>Scan</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content >
+
+  <ion-card class="reports" (click)="auto()">
+    <ion-card-header >
+      <h1 style="color: white!important;">AutoScan <ion-icon style="float: right!important;color: white!important;" name="qr-scanner"></ion-icon></h1>
+    </ion-card-header>
+    <ion-card-content style="color: white">
+      click here to view scanned products.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="contact" (click)="manual()">
+    <ion-card-header >
+      <h1 style="color: white!important;">Manual Scan <ion-icon style="float: right!important;color: white!important;" name="qr-scanner"></ion-icon></h1>
+    </ion-card-header>
+    <ion-card-content style="color: white">
+      click here to view scanned products.
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

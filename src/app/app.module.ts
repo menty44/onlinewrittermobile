@@ -16,6 +16,8 @@ import {ContentPage} from "../pages/content/content";
 import {LoginPage} from "../pages/login/login";
 // import {LoginPage} from "../pages/login/login";
 
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
 export function createTranslateLoader(http: HttpClient) {
@@ -67,6 +69,7 @@ export function provideSettings(storage: Storage) {
     Camera,
     SplashScreen,
     StatusBar,
+      BarcodeScanner,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler }
