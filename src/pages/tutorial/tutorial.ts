@@ -4,6 +4,7 @@ import { IonicPage, MenuController, NavController, Platform } from 'ionic-angula
 import { TranslateService } from '@ngx-translate/core';
 import {ContentPage} from "../content/content";
 import {LoginPage} from "../login/login";
+// import {LoaderPage} from "../loader/loader";
 // import { SignupPage } from "../signup/signup";
 
 export interface Slide {
@@ -23,7 +24,9 @@ export class TutorialPage {
   dir: string = 'ltr';
   public checkfred  : any;
 
-  constructor(public navCtrl: NavController, public menu: MenuController, translate: TranslateService, public platform: Platform) {
+  constructor( public navCtrl: NavController,
+              public menu: MenuController, translate: TranslateService,
+              public platform: Platform) {
     this.dir = platform.dir();
     translate.get(["TUTORIAL_SLIDE1_TITLE",
       "TUTORIAL_SLIDE1_DESCRIPTION",
@@ -55,20 +58,30 @@ export class TutorialPage {
   }
 
   ionViewDidLoad() {
-    this.checkfred = 'cool';
 
-    if(this.checkfred === 'cool'){
-
-      this.navCtrl.push(LoginPage);
-
-    }else{
-      this.navCtrl.setRoot('WelcomePage', {}, {
-        animate: true,
-        direction: 'forward'
-      });
-    }
+    // // const loader = this.loadingCtrl.create({
+    // //   content: "Please wait...",
+    // //   duration: 3000
+    // // });
+    // // loader.present();
+    //
+    // this.checkfred = 'cool';
+    //
+    // if(this.checkfred === 'cool'){
+    //
+    //     // loader.dismissAll();
+    //   this.navCtrl.push(LoginPage);
+    //
+    // }else{
+    //     // loader.dismissAll();
+    //   this.navCtrl.setRoot('WelcomePage', {}, {
+    //     animate: true,
+    //     direction: 'forward'
+    //   });
+    // }
 
   }
+
 
   startApp() {
 

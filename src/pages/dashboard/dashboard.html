@@ -1,0 +1,128 @@
+<!--
+  Generated template for the DashboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<style>
+  .splash-bg {
+    position: relative;
+    /*background: url("../assets/img/splashbg.png") no-repeat transparent;*/
+    background: dodgerblue;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: cover;
+    height: 45px;
+    z-index: 1;
+    -webkit-animation: animatedBackground 40s linear infinite;
+    animation: animatedBackground 20s linear infinite;
+  }
+  .scan {
+      background-color: #1fc8db;
+      background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+      color: white;
+  }
+    .payment {
+        background-color: #1fc8db;
+        background-image: linear-gradient(141deg, #f7ff59 0%, #1fc8db 51%, #191ce8 75%);
+        color: white;
+        opacity: 0.95;
+    }
+    .cart {
+        background: rgba(237,104,220,1);
+        background: -moz-linear-gradient(-45deg, rgba(237,104,220,1) 0%, rgba(189,5,149,1) 2%, rgba(231,68,201,1) 44%, rgba(232,69,202,1) 45%, rgba(250,66,204,1) 46%);
+        background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(237,104,220,1)), color-stop(2%, rgba(189,5,149,1)), color-stop(44%, rgba(231,68,201,1)), color-stop(45%, rgba(232,69,202,1)), color-stop(46%, rgba(250,66,204,1)));
+        background: -webkit-linear-gradient(-45deg, rgba(237,104,220,1) 0%, rgba(189,5,149,1) 2%, rgba(231,68,201,1) 44%, rgba(232,69,202,1) 45%, rgba(250,66,204,1) 46%);
+        background: -o-linear-gradient(-45deg, rgba(237,104,220,1) 0%, rgba(189,5,149,1) 2%, rgba(231,68,201,1) 44%, rgba(232,69,202,1) 45%, rgba(250,66,204,1) 46%);
+        background: -ms-linear-gradient(-45deg, rgba(237,104,220,1) 0%, rgba(189,5,149,1) 2%, rgba(231,68,201,1) 44%, rgba(232,69,202,1) 45%, rgba(250,66,204,1) 46%);
+        background: linear-gradient(135deg, rgba(237,104,220,1) 0%, rgba(189,5,149,1) 2%, rgba(231,68,201,1) 44%, rgba(232,69,202,1) 45%, rgba(250,66,204,1) 46%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed68dc', endColorstr='#fa42cc', GradientType=1 );
+    }
+    .reports {
+        background: rgba(246,160,147,1);
+        background: -moz-linear-gradient(45deg, rgba(246,160,147,1) 0%, rgba(246,160,147,1) 38%, rgba(249,120,98,1) 56%, rgba(248,80,58,1) 59%, rgba(243,88,68,1) 71%, rgba(236,98,85,1) 100%);
+        background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(246,160,147,1)), color-stop(38%, rgba(246,160,147,1)), color-stop(56%, rgba(249,120,98,1)), color-stop(59%, rgba(248,80,58,1)), color-stop(71%, rgba(243,88,68,1)), color-stop(100%, rgba(236,98,85,1)));
+        background: -webkit-linear-gradient(45deg, rgba(246,160,147,1) 0%, rgba(246,160,147,1) 38%, rgba(249,120,98,1) 56%, rgba(248,80,58,1) 59%, rgba(243,88,68,1) 71%, rgba(236,98,85,1) 100%);
+        background: -o-linear-gradient(45deg, rgba(246,160,147,1) 0%, rgba(246,160,147,1) 38%, rgba(249,120,98,1) 56%, rgba(248,80,58,1) 59%, rgba(243,88,68,1) 71%, rgba(236,98,85,1) 100%);
+        background: -ms-linear-gradient(45deg, rgba(246,160,147,1) 0%, rgba(246,160,147,1) 38%, rgba(249,120,98,1) 56%, rgba(248,80,58,1) 59%, rgba(243,88,68,1) 71%, rgba(236,98,85,1) 100%);
+        background: linear-gradient(45deg, rgba(246,160,147,1) 0%, rgba(246,160,147,1) 38%, rgba(249,120,98,1) 56%, rgba(248,80,58,1) 59%, rgba(243,88,68,1) 71%, rgba(236,98,85,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6a093', endColorstr='#ec6255', GradientType=1 );
+    }
+    .contact {
+        background: rgba(182,124,244,1);
+        background: -moz-linear-gradient(-45deg, rgba(182,124,244,1) 0%, rgba(182,124,244,1) 32%, rgba(136,38,247,1) 57%, rgba(163,78,249,1) 65%, rgba(139,49,242,1) 75%, rgba(136,62,234,1) 96%);
+        background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(182,124,244,1)), color-stop(32%, rgba(182,124,244,1)), color-stop(57%, rgba(136,38,247,1)), color-stop(65%, rgba(163,78,249,1)), color-stop(75%, rgba(139,49,242,1)), color-stop(96%, rgba(136,62,234,1)));
+        background: -webkit-linear-gradient(-45deg, rgba(182,124,244,1) 0%, rgba(182,124,244,1) 32%, rgba(136,38,247,1) 57%, rgba(163,78,249,1) 65%, rgba(139,49,242,1) 75%, rgba(136,62,234,1) 96%);
+        background: -o-linear-gradient(-45deg, rgba(182,124,244,1) 0%, rgba(182,124,244,1) 32%, rgba(136,38,247,1) 57%, rgba(163,78,249,1) 65%, rgba(139,49,242,1) 75%, rgba(136,62,234,1) 96%);
+        background: -ms-linear-gradient(-45deg, rgba(182,124,244,1) 0%, rgba(182,124,244,1) 32%, rgba(136,38,247,1) 57%, rgba(163,78,249,1) 65%, rgba(139,49,242,1) 75%, rgba(136,62,234,1) 96%);
+        background: linear-gradient(135deg, rgba(182,124,244,1) 0%, rgba(182,124,244,1) 32%, rgba(136,38,247,1) 57%, rgba(163,78,249,1) 65%, rgba(139,49,242,1) 75%, rgba(136,62,234,1) 96%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b67cf4', endColorstr='#883eea', GradientType=1 );
+
+    }
+</style>
+<ion-header>
+
+  <ion-navbar>
+      <ion-title>Dashboard</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="">
+
+    <ion-card class="scan">
+        <ion-card-header >
+            <h1 style="color: white!important;">Scan Products s</h1>
+        </ion-card-header>
+        <ion-card-content>
+            click here to scan your products.
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card class="payment">
+        <ion-card-header >
+            <h1 style="color: white!important;">Scan Products <ion-icon style="float: right!important;color: white!important;" name="qr-scanner"></ion-icon></h1>
+        </ion-card-header>
+        <ion-card-content>
+            click here to scan your products.
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card class="cart">
+        <ion-card-header >
+            <h1 style="color: white!important;">View Cart <ion-icon style="float: right!important;color: white!important;" name="cart"></ion-icon></h1>
+        </ion-card-header>
+        <ion-card-content>
+            click here to view scanned products.
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card class="payment">
+        <ion-card-header >
+            <h1 style="color: white!important;">Payment History <ion-icon style="float: right!important;color: white!important;" name="cart"></ion-icon></h1>
+        </ion-card-header>
+        <ion-card-content>
+            click here to view scanned products.
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card class="reports">
+        <ion-card-header >
+            <h1 style="color: white!important;">Reports <ion-icon style="float: right!important;color: white!important;" name="analytics"></ion-icon></h1>
+        </ion-card-header>
+        <ion-card-content>
+            click here to view scanned products.
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card class="contact">
+        <ion-card-header >
+            <h1 style="color: white!important;">Contact Us <ion-icon style="float: right!important;color: white!important;" name="send"></ion-icon></h1>
+        </ion-card-header>
+        <ion-card-content>
+            click here to view scanned products.
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>

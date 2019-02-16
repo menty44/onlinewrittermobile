@@ -1,5 +1,7 @@
 {
   "name": "fredwriter",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

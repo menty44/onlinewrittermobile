@@ -5,6 +5,9 @@ import { IonicPage, NavController, ToastController } from 'ionic-angular';
 import { User } from '../../providers';
 import { MainPage } from '../';
 
+
+import {LoaderPage} from "../loader/loader";
+
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -47,4 +50,7 @@ export class LoginPage {
       toast.present();
     });
   }
+
+
+
 }

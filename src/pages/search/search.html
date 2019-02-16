@@ -1,3 +1,17 @@
+<style>
+    .splash-bg {
+        position: relative;
+        background: url("../assets/img/splashbg.png") no-repeat transparent;
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-size: cover;
+        height: 45%;
+        z-index: 1;
+        background-repeat: repeat-x;
+        -webkit-animation: animatedBackground 40s linear infinite;
+        animation: animatedBackground 20s linear infinite;
+    }
+</style>
 <ion-header>
 
   <ion-navbar>
@@ -7,7 +21,7 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content class="splash-bg">
   <ion-searchbar (ionInput)="getItems($event)" placeholder="{{ 'SEARCH_PLACEHOLDER' | translate }}"></ion-searchbar>
   <ion-list>
     <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems">
@@ -19,4 +33,14 @@
       <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
     </button>
   </ion-list>
+
+  <ion-card>
+    <ion-card-header>
+      Header
+    </ion-card-header>
+    <ion-card-content>
+      The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
