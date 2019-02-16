@@ -4,6 +4,13 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+<style>
+    .test{
+        background-color: #1fc8db;
+        background-image: linear-gradient(141deg, #7a18e8 0%, #5b5ae8 51%, #191ce8 75%);
+        color: white;
+    }
+</style>
 <ion-header>
 
   <ion-navbar>
@@ -14,5 +21,31 @@
 
 
 <ion-content padding>
+    <!--<ion-label fixed>Product Code</ion-label>-->
+    <!--<ion-input [(ngModel)]="manualcode" ></ion-input>-->
+    <ion-item>
+        <ion-label fixed>Product Code</ion-label>
+        <ion-input [(ngModel)]="manualcode"  placeholder="Enter code"></ion-input>
+    </ion-item>
+    <button block ion-button (click)="searchProd()">Search Product</button>
+
+    <ion-item *ngIf="manualresults">
+        <ion-card class="test" >
+            <ion-card-header >
+                <h1 style="color: white!important;">Results <ion-icon style="float: right!important;color: white!important;" name="aperture"></ion-icon></h1>
+            </ion-card-header>
+            <ion-card-content style="color: white">
+                <span style="color: greenyellow">Product Name : Omo Detergent</span><hr>
+                <span style="color: greenyellow">Product Code : {{manualresults.text}}</span><hr>
+                <span style="color: greenyellow">Price : KES 200</span>
+
+            </ion-card-content>
+        </ion-card>
+    </ion-item>
+
+
+  <ion-fab (click)="mydetailsmanual()" style="padding-bottom: 20%!important;" bottom right edge>
+    <button ion-fab mini>2</button>
+  </ion-fab>
 
 </ion-content>

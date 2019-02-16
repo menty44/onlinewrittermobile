@@ -29,7 +29,7 @@ export class ScanPage {
 }
 
   manual() {
-    this.navCtrl.push('ScanPage');
+    this.navCtrl.push('ManualscanPage');
 }
 
 }

@@ -42,11 +42,12 @@ export class AutoscanPage {
           swal("Oops!", "oh yea nigga!", "success");
           // loader.dismiss();
       }).catch(err => {
+          this.navCtrl.push('ScanPage');
           console.log('Error', err);
       });
   }
 
-    mydetails() {
+    static mydetails() {
         swal("Yea!", "You have 23 products in your cart", "success");
     }
 
