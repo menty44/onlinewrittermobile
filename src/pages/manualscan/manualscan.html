@@ -29,8 +29,7 @@
     </ion-item>
     <button block ion-button (click)="searchProd()">Search Product</button>
 
-    <ion-item *ngIf="manualresults">
-        <ion-card class="test" >
+        <ion-card class="test"  *ngIf="manualresults">
             <ion-card-header >
                 <h1 style="color: white!important;">Results <ion-icon style="float: right!important;color: white!important;" name="aperture"></ion-icon></h1>
             </ion-card-header>
@@ -41,8 +40,6 @@
 
             </ion-card-content>
         </ion-card>
-    </ion-item>
-
 
   <ion-fab (click)="mydetailsmanual()" style="padding-bottom: 20%!important;" bottom right edge>
     <button ion-fab mini>2</button>

@@ -10,12 +10,12 @@
 <ion-content>
   <img src="assets/img/logo2.png">
   <!--<form (submit)="doLogin()">-->
-  <form (submit)="fred()">
+  <!--<form (submit)="fred()">-->
     <ion-list>
 
       <ion-item>
         <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
-        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+        <ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
       </ion-item>
 
       <!--
@@ -29,13 +29,13 @@
 
       <ion-item>
         <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
-        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+        <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
       </ion-item>
 
       <div padding>
-        <button ion-button color="primary" block>{{ 'LOGIN_BUTTON' | translate }}</button>
+        <button ion-button color="primary" (click)="logintwo()" block>{{ 'LOGIN_BUTTON' | translate }}</button>
       </div>
 
     </ion-list>
-  </form>
+  <!--</form>-->
 </ion-content>

@@ -29,7 +29,7 @@ export class DashboardPage {
               public navParams: NavParams) {
   }
 
-  static ionViewDidLoad() {
+   ionViewDidLoad() {
     console.log('ionViewDidLoad DashboardPage');
   }
 
