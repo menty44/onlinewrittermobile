@@ -8,7 +8,6 @@ import { ReportsPage } from '../reports/reports';
 import { CartPage } from '../cart/cart';
 import { ComplainPage } from '../complain/complain';
 import { PaymentPage } from '../payment/payment';
-
 import swal from 'sweetalert';
 
 /**
@@ -53,9 +52,9 @@ export class DashboardPage {
       this.navCtrl.push('ProfilePage');
   }
 
-  static pushContactus () {
+  pushContactus () {
       // this.navCtrl.push('ComplainPage');
-      swal("Email or WhatsApp us !", "menty44@gmail.com | 0720106420", "success");
+      swal('Email or WhatsApp us !', 'menty44@gmail.com | 0720106420', 'success');
   }
 
 }

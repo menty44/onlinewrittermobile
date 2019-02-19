@@ -12,8 +12,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import {LoaderPage} from "../loader/loader";
 import axios from 'axios';
-import { HTTP } from '@ionic-native/http';
+// import { HTTP } from '@ionic-native/http';
+import {HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {map} from "rxjs/operators/map";
+import swal from 'sweetalert';
 
 @IonicPage()
 @Component({
@@ -38,7 +41,7 @@ export class LoginPage {
   constructor(public navCtrl: NavController,
     public user: User,
     public toastCtrl: ToastController,
-    public translateService: TranslateService, private http: HTTP) {
+    public translateService: TranslateService, public http: HttpClient) {
 
     this.translateService.get('LOGIN_ERROR').subscribe((value) => {
       this.loginErrorString = value;
@@ -84,24 +87,65 @@ export class LoginPage {
   }
 
   logintwo() {
+      // const email = this.email;
+      // const password = this.password;
+      // this.http.get('http://192.168.1.101:8080/login?', {'email': email, 'password': password},
+      //     {'Content-Type': 'application/x-www-form-urlencoded'})
+      //     .then(data => {
+      //
+      //         console.log(data.status);
+      //         console.log(data.data); // data received by server
+      //         console.log(data.headers);
+      //
+      //     })
+      //     .catch(error => {
+      //
+      //         console.log(error.status);
+      //         console.log(error.error); // error message as string
+      //         console.log(error.headers);
+      //
+      //     });
+  }
+
+  loginthree() {
       const email = this.email;
       const password = this.password;
-      this.http.get('http://192.168.1.101:8080/login?', {'email': email, 'password': password},
-          {'Content-Type': 'application/x-www-form-urlencoded'})
-          .then(data => {
+      const headers : any = new HttpHeaders({'Content-Type': 'application/json'}),
+          options   : any = {'email': email, 'password': password},
 
-              console.log(data.status);
-              console.log(data.data); // data received by server
-              console.log(data.headers);
+          url: any = 'http://192.168.1.15:8080/login?';
 
-          })
-          .catch(error => {
+      console.warn('test', JSON.stringify(options));
+      console.warn('test', JSON.stringify(url));
 
-              console.log(error.status);
-              console.log(error.error); // error message as string
-              console.log(error.headers);
+      // this.http.post(url, options, headers)
+      //     .subscribe((data: any) => {
+      //
+      //         console.log('data response from the server', data);
+      //       })
 
-          });
+      this.http
+          .get('http://192.168.1.15:8080/login?email=' + email + '&password=' + password)
+          .subscribe((data : any) =>
+              {
+                  console.log(data);
+                  console.warn('response', JSON.stringify(data));
+                  console.warn('response', data.ok);
+                  localStorage.setItem('profile', JSON.stringify(data));
+                  if(data.ok === '00') {
+                      //this.oluoch = response.data;
+                      // this.navCtrl.push('DashboardPage');
+                      this.navCtrl.push(MainPage);
+                  }else {
+                      swal('Warning', 'Incorrect Credentials', 'error');
+                  }
+              },
+              (error : any) =>
+              {
+                  swal('Warning', 'Incorrect Credentials', 'error');
+                  console.dir(error);
+                  console.warn('response', JSON.stringify(error));
+              });
   }
 
 }

@@ -18,15 +18,6 @@
         <ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
       </ion-item>
 
-      <!--
-      Want to use a Username instead of an Email? Here you go:
-
-      <ion-item>
-        <ion-label floating>{{ 'USERNAME' | translate }}</ion-label>
-        <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>
-      </ion-item>
-      -->
-
       <ion-item>
         <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
         <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
@@ -34,7 +25,7 @@
 
       <div padding>
         <!--<button ion-button color="primary" (click)="logintwo()" block>{{ 'LOGIN_BUTTON' | translate }}</button>-->
-        <button (click)="logintwo()" style="width: 100%" ion-button color="primary" round>{{ 'LOGIN_BUTTON' | translate }}</button>
+        <button (click)="loginthree()" style="width: 100%" ion-button color="primary" round>{{ 'LOGIN_BUTTON' | translate }}</button>
 
       </div>
 
