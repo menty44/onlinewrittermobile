@@ -1,22 +1,24 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { IonicPage, NavController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, ToastController, LoadingController } from 'ionic-angular';
 
 import { User } from '../../providers';
 import { MainPage } from '../';
 import { DashboardPage }  from '../dashboard/dashboard';
+// import { ToastController } from 'ionic-angular';
+
 
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 
 import {LoaderPage} from "../loader/loader";
+
 import axios from 'axios';
 // import { HTTP } from '@ionic-native/http';
 import {HttpHeaders} from '@angular/common/http';
 import {HttpClient} from '@angular/common/http';
 import {map} from "rxjs/operators/map";
-import swal from 'sweetalert';
 
 @IonicPage()
 @Component({
@@ -39,9 +41,11 @@ export class LoginPage {
   private loginErrorString: string;
 
   constructor(public navCtrl: NavController,
-    public user: User,
-    public toastCtrl: ToastController,
-    public translateService: TranslateService, public http: HttpClient) {
+                public user: User,
+                public translateService: TranslateService,
+                public http: HttpClient,
+              public toastCtrl: ToastController,
+                public loadingCtrl : LoadingController) {
 
     this.translateService.get('LOGIN_ERROR').subscribe((value) => {
       this.loginErrorString = value;
@@ -108,6 +112,13 @@ export class LoginPage {
   }
 
   loginthree() {
+      var loading = this.loadingCtrl.create({
+          spinner: 'hide',
+          content: 'Authentication Account ...'
+      });
+
+      loading.present();
+
       const email = this.email;
       const password = this.password;
       const headers : any = new HttpHeaders({'Content-Type': 'application/json'}),
@@ -135,14 +146,31 @@ export class LoginPage {
                   if(data.ok === '00') {
                       //this.oluoch = response.data;
                       // this.navCtrl.push('DashboardPage');
+                      loading.dismiss();
+                      const toast = this.toastCtrl.create({
+                          message: 'Success ' ,
+                          position: 'middle',
+                          duration: 3500
+                      });
+                      toast.present();
                       this.navCtrl.push(MainPage);
                   }else {
-                      swal('Warning', 'Incorrect Credentials', 'error');
+                      const toast = this.toastCtrl.create({
+                          message: 'Warning ' ,
+                          position: 'Incorrect Credentials',
+                          duration: 3500
+                      });
+                      toast.present();
                   }
               },
               (error : any) =>
               {
-                  swal('Warning', 'Incorrect Credentials', 'error');
+                  const toast = this.toastCtrl.create({
+                      message: 'Warning ' ,
+                      position: 'Incorrect Credentials',
+                      duration: 3500
+                  });
+                  toast.present();
                   console.dir(error);
                   console.warn('response', JSON.stringify(error));
               });

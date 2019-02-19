@@ -79,7 +79,7 @@ export class SettingsPage {
 
     this.translate.get(this.pageTitleKey).subscribe((res) => {
       this.pageTitle = res;
-    })
+    });
 
     this.settings.load().then(() => {
       this.settingsReady = true;
