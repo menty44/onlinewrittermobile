@@ -50,4 +50,8 @@ export class SignupPage {
       toast.present();
     });
   }
+
+  regsiter() {
+
+  }
 }
