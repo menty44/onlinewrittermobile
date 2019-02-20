@@ -44,14 +44,11 @@
             <h1 style="color: white!important;">Results <ion-icon style="float: right!important;color: white!important;" name="aperture"></ion-icon></h1>
         </ion-card-header>
         <ion-card-content style="color: white">
-            <span style="color: greenyellow">Product Name : Omo Detergent</span><hr>
+            <span style="color: greenyellow">Product Name : {{results}}</span><hr>
             <span style="color: greenyellow">Product Code : {{results.text}}</span><hr>
-            <span style="color: greenyellow">Price : KES 200</span>
+            <span style="color: greenyellow">Price : KES {{results}}</span>
 
         </ion-card-content>
     </ion-card>
 
-    <ion-fab (click)="mydetails()" style="padding-bottom: 20%!important;" bottom right edge>
-        <button ion-fab mini>23</button>
-    </ion-fab>
 </ion-content>

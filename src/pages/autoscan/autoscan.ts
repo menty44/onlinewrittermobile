@@ -23,7 +23,10 @@ export class AutoscanPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private barcodeScanner: BarcodeScanner,
-              public loadingCtrl: LoadingController) {
+              public loadingCtrl: LoadingController,
+              public http: HttpClient,
+              public toastCtrl: ToastController,
+              public loadingCtrl : LoadingController) {
   }
 
   static ionViewDidLoad() {
@@ -31,24 +34,31 @@ export class AutoscanPage {
   }
 
   scanProd() {
-      // const loader = this.loadingCtrl.create({
-      //     content: "Please wait...",
-      //     duration: 3000
-      // });
-      // loader.present();
+      const loader = this.loadingCtrl.create({
+          content: "Please wait...",
+          duration: 3000
+      });
+      loader.present();
       this.barcodeScanner.scan().then(barcodeData => {
-          console.log('Barcode data', JSON.stringify(barcodeData));
+          console.log('Barcode data ', JSON.stringify(barcodeData));
           this.results = barcodeData;
-          swal("Oops!", "oh yea nigga!", "success");
+
+
+          // swal("Oops!", "oh yea nigga!", "success");
           // loader.dismiss();
       }).catch(err => {
-          this.navCtrl.push('ScanPage');
+          //this.navCtrl.push('ScanPage');
           console.log('Error', err);
+          const loader = this.loadingCtrl.create({
+            content: "Product cannot be found in database ...",
+            duration: 3000
+        });
+        loader.present();
       });
   }
 
     static mydetails() {
-        swal("Yea!", "You have 23 products in your cart", "success");
+        // swal("Yea!", "You have 23 products in your cart", "success");
     }
 
 }
