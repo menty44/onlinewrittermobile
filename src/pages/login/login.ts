@@ -7,10 +7,8 @@ import { MainPage } from '../';
 import { DashboardPage }  from '../dashboard/dashboard';
 // import { ToastController } from 'ionic-angular';
 
-
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-
 
 import {LoaderPage} from "../loader/loader";
 
@@ -69,46 +67,9 @@ export class LoginPage {
   }
 
   login() {
-    // const email = this.email;
-    // const password = this.password;
-    //
-    //   console.log('my email' + JSON.stringify(email));
-    //   console.log('my password' + JSON.stringify(password));
-    //
-    //   // Make a request for a user login
-    //   axios.get('192.168.1.101:8080/login?', {'email': email, 'password': password})
-    //       .then(response => {
-    //           console.log('freddy', JSON.stringify(response.data));
-    //           console.log('freddy', response.data.activated);
-    //           localStorage.setItem('profile', JSON.stringify(response.data));
-    //           this.oluoch = response.data;
-    //           this.navCtrl.push("DashboardPage");
-    //       })
-    //       .catch(error => {
-    //           console.log(error);
-    //       });
-
   }
 
   logintwo() {
-      // const email = this.email;
-      // const password = this.password;
-      // this.http.get('http://192.168.1.101:8080/login?', {'email': email, 'password': password},
-      //     {'Content-Type': 'application/x-www-form-urlencoded'})
-      //     .then(data => {
-      //
-      //         console.log(data.status);
-      //         console.log(data.data); // data received by server
-      //         console.log(data.headers);
-      //
-      //     })
-      //     .catch(error => {
-      //
-      //         console.log(error.status);
-      //         console.log(error.error); // error message as string
-      //         console.log(error.headers);
-      //
-      //     });
   }
 
   loginthree() {
