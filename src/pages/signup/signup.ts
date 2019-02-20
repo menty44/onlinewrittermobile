@@ -23,6 +23,13 @@ export class SignupPage {
   // Our translated text strings
   private signupErrorString: string;
 
+  public firstname: any;
+  public lastname: any;
+  public gender: any;
+  public mobileno: any;
+  public email: any;
+  public password: any;
+
   constructor(public navCtrl: NavController,
     public user: User,
     public toastCtrl: ToastController,
@@ -51,7 +58,21 @@ export class SignupPage {
     });
   }
 
-  regsiter() {
+  register() {
+    const firstname = this.firstname;
+    const lastname = this.lastname;
+    const gender = this.gender;
+    const mobileno = this.mobileno;
+    const email = this.email;
+    const password = this.password;
 
+    console.log(firstname);
+    console.log(lastname);
+    console.log(gender);
+    console.log(mobileno);
+    console.log(email);
+    console.log(password);
+
+    this.navCtrl.push(MainPage);
   }
 }
