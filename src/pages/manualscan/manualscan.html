@@ -29,14 +29,15 @@
     </ion-item>
     <button block ion-button (click)="searchProd()">Search Product</button>
 
-        <ion-card class="test"  *ngIf="manualresults">
+        <ion-card class="test"  *ngIf="oluoch">
             <ion-card-header >
                 <h1 style="color: white!important;">Results <ion-icon style="float: right!important;color: white!important;" name="aperture"></ion-icon></h1>
             </ion-card-header>
             <ion-card-content style="color: white">
-                <span style="color: greenyellow">Product Name : Omo Detergent</span><hr>
-                <span style="color: greenyellow">Product Code : {{manualresults.text}}</span><hr>
-                <span style="color: greenyellow">Price : KES 200</span>
+                <span style="color: greenyellow">Product Name : {{oluoch.name}}</span><hr>
+                <span style="color: greenyellow">Product Code : {{oluoch.productcode}}</span><hr style="color:gray;">
+                <span style="color: greenyellow">Price : KES {{oluoch.sellprice}}</span><hr>
+                <span style="color: greenyellow">Desc :  {{oluoch.description}}</span>
 
             </ion-card-content>
         </ion-card>
