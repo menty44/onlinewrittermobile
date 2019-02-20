@@ -39,14 +39,15 @@
     <div class=""></div>
     <button ion-button block (click)="scanProd()">SCAN</button>
 
-    <ion-card class="test" *ngIf="results">
+    <ion-card class="test" *ngIf="oluochi">
         <ion-card-header >
             <h1 style="color: white!important;">Results <ion-icon style="float: right!important;color: white!important;" name="aperture"></ion-icon></h1>
         </ion-card-header>
         <ion-card-content style="color: white">
-            <span style="color: greenyellow">Product Name : {{results}}</span><hr>
-            <span style="color: greenyellow">Product Code : {{results.text}}</span><hr>
-            <span style="color: greenyellow">Price : KES {{results}}</span>
+            <!-- <span style="color: greenyellow">Product Name : {{oluochi.name}}</span><hr>
+            <span style="color: greenyellow">Product Code : {{oluochi.productcode}}</span><hr style="color:gray;">
+            <span style="color: greenyellow">Price : KES {{oluochi.sellprice}}</span><hr>
+            <span style="color: greenyellow">Desc :  {{oluochi.description}}</span> -->
 
         </ion-card-content>
     </ion-card>

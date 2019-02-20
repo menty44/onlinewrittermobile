@@ -49,6 +49,7 @@ export class ManualscanPage {
       spinner: 'hide',
       content: 'Searching Product ...'
   });
+  loading.present();
       const manualcode = this.manualcode;
       console.log("my searchProd" + manualcode);
 
@@ -69,7 +70,7 @@ export class ManualscanPage {
                       loading.dismiss();
                       const toast = this.toastCtrl.create({
                           message: 'Success ' ,
-                          position: 'bottom1',
+                          position: 'bottom',
                           duration: 500
                       });
                       toast.present();
@@ -84,7 +85,7 @@ export class ManualscanPage {
               {
                   const toast = this.toastCtrl.create({
                       message: 'Warning Product not found ' ,
-                      position: 'Incorrect Credentials',
+                      position: 'bottom',
                       duration: 3500
                   });
                   toast.present();
