@@ -56,6 +56,9 @@ export class ManualscanPage {
           // this.barcodeScanner.scan().then(barcodeData => {
           console.log('Barcode data', JSON.stringify(manualcode));
           //this.enteredcode = manualcode;
+          if(!manualcode) {
+            swal('Error', 'Please Enter the Product Code', 'error');
+          }
 
           this.http
           .get('http://192.168.1.19:8080/biosearch?code=' + manualcode)
@@ -74,12 +77,12 @@ export class ManualscanPage {
                       this.oluoch = data;
                       // this.manualresults = findata;
                       loading.dismiss();
-                      // const toast = this.toastCtrl.create({
-                      //     message: 'Success ' ,
-                      //     position: 'bottom',
-                      //     duration: 500
-                      // });
-                      // toast.present();
+                      const toast = this.toastCtrl.create({
+                          message: 'Success ' ,
+                          position: 'bottom',
+                          duration: 500
+                      });
+                      toast.present();
                       //this.kuku = 'mmmh';
                   }
               },
