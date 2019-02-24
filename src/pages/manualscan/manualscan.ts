@@ -53,7 +53,7 @@ export class ManualscanPage {
       const manualcode = this.manualcode;
       console.log("my searchProd" + manualcode);
 
-      // this.barcodeScanner.scan().then(barcodeData => {
+          // this.barcodeScanner.scan().then(barcodeData => {
           console.log('Barcode data', JSON.stringify(manualcode));
           //this.enteredcode = manualcode;
 
@@ -61,24 +61,26 @@ export class ManualscanPage {
           .get('http://192.168.1.19:8080/biosearch?code=' + manualcode)
           .subscribe((data : any) =>
               {
-                  console.log(data);
-                  console.warn('response', JSON.stringify(data));
-                  console.warn('response', data.ok);
+                  // console.log('response', data);
+                  // console.warn('response', JSON.stringify(data));
+                  // console.warn('response', data.ok);
                   //localStorage.setItem('profile', JSON.stringify(data));
                   if(data.ok === '00') {
                     console.warn('we are inside ', JSON.stringify(data));
-                      loading.dismiss();
-                      const toast = this.toastCtrl.create({
-                          message: 'Success ' ,
-                          position: 'bottom',
-                          duration: 500
-                      });
-                      toast.present();
+                    console.log('response', data);
+                      
                       //const strdata = data;
-                      const findata = JSON.parse(data);
-                      this.oluoch = findata;
+                      // const findata = JSON.parse(data);
+                      this.oluoch = data;
                       // this.manualresults = findata;
-                      this.kuku = 'mmmh';
+                      loading.dismiss();
+                      // const toast = this.toastCtrl.create({
+                      //     message: 'Success ' ,
+                      //     position: 'bottom',
+                      //     duration: 500
+                      // });
+                      // toast.present();
+                      //this.kuku = 'mmmh';
                   }
               },
               (error : any) =>
