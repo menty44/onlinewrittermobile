@@ -1,0 +1,49 @@
+<!--
+  Generated template for the EmailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Send Email</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background: linear-gradient(to bottom, #488aff 5%, #ffffff  95%)!important;" padding>
+    <ion-card>
+
+        <img src="assets/img/email.jpg"/>
+    
+        <ion-card-content>
+          <ion-card-title style="color: red;">
+            <h6>Pressing Issue ? Email Us</h6>
+          </ion-card-title>
+    
+        </ion-card-content>
+
+        <ion-list inset>
+            <button style="width:100%" block>
+                <ion-label color="primary">menty44@gmail.com</ion-label>
+            </button>
+          </ion-list>
+          <ion-list inset> 
+              <button style="width:100%" block>
+            <ion-label color="primary">Subject : Urgent Issue</ion-label>
+            </button>
+          </ion-list>
+  
+        <ion-item>
+            <ion-label color="primary">Message</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-textarea [(ngModel)]="message" ></ion-textarea>
+        </ion-item>
+          <button style="width:100%; padding-right: 3px; padding-left:3px;" ion-button color="primary" block>SEND</button>
+        
+      </ion-card>
+
+</ion-content>

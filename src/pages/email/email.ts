@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-// import { EmailPage }  from '../email/email';
-import { EmailPage } from '../email/email';
-
 /**
- * Generated class for the HelpPage page.
+ * Generated class for the EmailPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -13,20 +10,16 @@ import { EmailPage } from '../email/email';
 
 @IonicPage()
 @Component({
-  selector: 'page-help',
-  templateUrl: 'help.html',
+  selector: 'page-email',
+  templateUrl: 'email.html',
 })
-export class HelpPage {
+export class EmailPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HelpPage');
-  }
-
-  sendemail() {
-    this.navCtrl.push('EmailPage');
+    console.log('ionViewDidLoad EmailPage');
   }
 
 }
