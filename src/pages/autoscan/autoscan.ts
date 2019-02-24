@@ -42,8 +42,8 @@ export class AutoscanPage {
 
   scanProd() {
       let loading = this.loadingCtrl.create({
-          content: "Searching Product...",
-          spinner: "hide"
+          content: "Searching Product ...",
+          spinner: "bubbles"
           // duration: 3000
       });
       loading.present();

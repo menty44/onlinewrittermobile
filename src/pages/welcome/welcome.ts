@@ -16,6 +16,11 @@ export class WelcomePage {
 
   constructor(public navCtrl: NavController) { }
 
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad ProfilePage');
+    localStorage.setItem('jackpotBetSlip', '[]');
+  }
+
   login() {
     this.navCtrl.push('LoginPage');
   }

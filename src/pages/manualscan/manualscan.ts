@@ -31,6 +31,8 @@ export class ManualscanPage {
   public manualresults: any;
   public  oluoch: any;
   public kuku: any;
+  public mycarts = [];
+  public weka = [];
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -45,13 +47,14 @@ export class ManualscanPage {
   }
 
   searchProd() {
-    var loading = this.loadingCtrl.create({
-      spinner: 'hide',
-      content: 'Searching Product ...'
-  });
-  loading.present();
+    
       const manualcode = this.manualcode;
       console.log("my searchProd" + manualcode);
+      var loading = this.loadingCtrl.create({
+        spinner: 'bubbles',
+        content: 'Searching Product ' + manualcode + '...'
+    });
+    loading.present();
 
           // this.barcodeScanner.scan().then(barcodeData => {
           console.log('Barcode data', JSON.stringify(manualcode));
@@ -70,7 +73,7 @@ export class ManualscanPage {
                   if(data.ok === '00') {
                     console.warn('we are inside ', JSON.stringify(data));
                     console.log('response', data);
-                      
+                      localStorage.setItem('tempstore', JSON.stringify(data));
                       //const strdata = data;
                       // const findata = JSON.parse(data);
                       this.oluoch = data;
@@ -82,7 +85,7 @@ export class ManualscanPage {
                           duration: 1500
                       });
                       toast.present();
-                      //this.kuku = 'mmmh';
+                      this.addtocart(data);
                   }
               },
               (error : any) =>
@@ -96,19 +99,91 @@ export class ManualscanPage {
                   console.dir(error);
                   console.warn('response', JSON.stringify(error));
               });
-
-          // swal("Oops!", "oh yea nigga!" + JSON.stringify(manualcode), "success");
-          
-          // loader.dismiss();
-      // }).catch(err => {
-      //     this.navCtrl.push('ScanPage');
-      //     console.log('Error', err);
-      // });
           }
   }
 
-    static mydetailsmanual() {
-        swal("Yea!", "You have 2 products in your cart", "success");
+ addtocart(entry){
+    var weka = [];
+
+    // if ((!weka) || (weka === undefined)) {
+
+    //   weka = [];
+    // }
+
+    for (var i = 0; i <= entry.length - 1; i++) {
+
+      if (weka[i].productcode === entry.productcode) {
+
+      }
     }
+
+    // if (!found) {
+      //var _game = entry;
+      //console.log('_GAME', _game);
+      var tstore1 = localStorage.getItem('tempstore');
+      console.log('_GAME', tstore1);
+      weka.push(entry);
+    // }
+
+    localStorage.setItem('jackpotBetSlip', JSON.stringify(weka));
+
+
+  }
+
+   addtocarttwo( entry){
+
+    //localStorage.setItem('gameid', game.GameID); productcode
+
+    var weka = JSON.parse(localStorage.getItem('jackpotBetSlip'));
+
+    var found = false;
+
+    if ((!weka) || (weka === undefined)) {
+
+      weka = [];
+    }
+
+    for (var i = 0; i <= weka.length - 1; i++) {
+
+      if (weka[i].productcode === weka.productcode) {
+
+      }
+    }
+
+    // if (!found) {
+      //var _game = entry;
+      var tstore = localStorage.getItem('tempstore');
+      var _game = JSON.parse(tstore);
+
+      if ( typeof(tstore) !== "undefined" && tstore !== null ) {
+        _game.forEach(function(entry) {
+
+          var found = false;
+
+          var title = [];
+          var cart = [];
+          var obj = {};
+
+          //this.passit = 'blueish';
+          console.log('entryobject', entry);
+
+        })}else{
+        console.log('bad data');
+      }
+
+      //console.log('_GAME', _game);
+      var tstore1 = localStorage.getItem('tempstore');
+      console.log('_GAME', tstore1);
+
+    //   for (var i=0; i < _game; i++) {
+    //     weka.push(_game);
+    //     // weka.push(items[itemId]);
+    // }
+      weka.push(entry);
+    // }
+
+    localStorage.setItem('jackpotBetSlip', JSON.stringify(weka));
+
+}
 
 }

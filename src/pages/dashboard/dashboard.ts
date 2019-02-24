@@ -23,6 +23,7 @@ import swal from 'sweetalert';
   templateUrl: 'dashboard.html',
 })
 export class DashboardPage {
+    public cartcount: any;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams) {
@@ -30,6 +31,11 @@ export class DashboardPage {
 
    ionViewDidLoad() {
     console.log('ionViewDidLoad DashboardPage');
+    var count = localStorage.getItem('jackpotBetSlip');
+    console.log('checkit', count);
+    //var newcount = JSON.parse(count);
+    // console.log('jackpotBetSlip length', JSON.parse(count));
+    this.cartcount = (!count == null)  ? JSON.parse(count).length : 'zero';
   }
 
   pushScan () {
