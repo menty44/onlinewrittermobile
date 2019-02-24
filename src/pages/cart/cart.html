@@ -29,13 +29,13 @@
 <ion-content padding>
     <ion-card class="profile" (click)="pushProfile()">
         <ion-card-header >
-            <h1 style="color: white!important;">Profile <ion-icon style="float: right!important;color: white!important;" name="cart"></ion-icon></h1>
+            <h1 style="color: white!important;">Product Name : {{mycart.name}} <ion-icon style="float: right!important;color: white!important;" name="cart"></ion-icon></h1>
         </ion-card-header>
         <ion-card-content style="color: white">
-            <!-- <span style="color: greenyellow">Product Name : {{cart.name}}</span><hr>
-                <span style="color: greenyellow">Product Code : {{cart.productcode}}</span><hr style="color:gray;">
-                <span style="color: greenyellow">Price : KES {{cart.sellprice}}</span><hr>
-                <span style="color: greenyellow">Desc :  {{cart.description}}</span> -->
+            <!-- <span style="color: greenyellow">Product Name : {{cart.name}}</span><hr> -->
+                <span style="color: greenyellow">Product Code : {{mycart.productcode}}</span><hr style="color:gray;">
+                <span style="color: greenyellow">Price : KES {{mycart.sellprice}}</span><hr>
+                <span style="color: greenyellow">Desc :  {{mycart.description}}</span>
         </ion-card-content>
     </ion-card>
 </ion-content>

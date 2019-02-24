@@ -11,6 +11,7 @@ import {HttpClient} from '@angular/common/http';
 import {map} from "rxjs/operators/map";
 
 import { MainPage } from '../';
+import _ from 'lodash';
 
 
 /**
@@ -33,6 +34,7 @@ export class ManualscanPage {
   public kuku: any;
   public mycarts = [];
   public weka = [];
+  public count: any;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -85,7 +87,65 @@ export class ManualscanPage {
                           duration: 1500
                       });
                       toast.present();
-                      this.addtocart(data);
+                      addtocartX(data);
+
+                      
+                      function addtocartX( entry){
+
+                        //localStorage.setItem('gameid', game.GameID); productcode
+                  
+                        var weka = JSON.parse(localStorage.getItem('jackpotBetSlip'));
+                  
+                        var found = false;
+                  
+                        if ((!weka) || (weka === undefined)) {
+                  
+                          weka = [];
+                        }
+                  
+                        for (var i = 0; i <= weka.length - 1; i++) {
+                  
+                          if (weka[i].productcode === weka.productcode) {
+                  
+                          }
+                        }
+                  
+                        if (!found) {
+                          //var _game = entry;
+                          var tstore = localStorage.getItem('tempstore');
+                          var _game = JSON.parse(tstore);
+                  
+                          if ( typeof(tstore) !== "undefined" && tstore !== null ) {
+                            _.forEach(entry, function(value) {
+                              console.log(value);
+                            });
+                    
+                            // _game.forEach(function(entry) {
+                  
+                            //   var found = false;
+                  
+                            //   var title = [];
+                            //   var cart = [];
+                            //   var obj = {};
+                  
+                            //   //this.passit = 'blueish';
+                            //   console.log('entryobject', entry);
+                  
+                            // })
+                          }else{
+                            console.log('bad data');
+                          }
+
+
+                        
+                          //console.log('_GAME', _game);
+                          var tstore1 = localStorage.getItem('tempstore');
+                          console.log('_GAME', tstore1);
+                          weka.push(_game);
+                        }
+                  
+                        localStorage.setItem('jackpotBetSlip', JSON.stringify(weka));
+                      }
                   }
               },
               (error : any) =>
@@ -130,18 +190,41 @@ export class ManualscanPage {
 
   }
 
+  addtocartfred( entry){
+
+    //localStorage.setItem('gameid', game.GameID); productcode
+    var count = localStorage.getItem('jackpotBetSlip');
+    console.log('my weka init data', count);
+    // var check = (!count == null)  ? JSON.parse(localStorage.getItem('jackpotBetSlip')) : [];
+
+    if(!count == null) {
+      console.log('my weka not null', JSON.parse(count));
+      var notnull = JSON.parse(count) ;
+      notnull.push(entry);
+    }else {
+      console.log('my weka null', count);
+      var firstindex = JSON.stringify(entry);
+      localStorage.setItem('jackpotBetSlip', '['+firstindex+']');
+    }
+    // console.log('my weka', check);
+    // console.log('my weka cart', check.push(entry));
+    // s.push(entry)
+
+  }
+
    addtocarttwo( entry){
 
     //localStorage.setItem('gameid', game.GameID); productcode
-
-    var weka = JSON.parse(localStorage.getItem('jackpotBetSlip'));
+    var count = localStorage.getItem('jackpotBetSlip');
+    var weka = (!count == null)  ? JSON.parse(localStorage.getItem('jackpotBetSlip')) : [];
+    //var weka = JSON.parse(localStorage.getItem('jackpotBetSlip'));
 
     var found = false;
 
-    if ((!weka) || (weka === undefined)) {
+    // if ((!weka) || (weka === undefined)) {
 
-      weka = [];
-    }
+    //   weka = [];
+    // }
 
     for (var i = 0; i <= weka.length - 1; i++) {
 
@@ -150,40 +233,43 @@ export class ManualscanPage {
       }
     }
 
-    // if (!found) {
+    if (!found) {
       //var _game = entry;
       var tstore = localStorage.getItem('tempstore');
       var _game = JSON.parse(tstore);
 
-      if ( typeof(tstore) !== "undefined" && tstore !== null ) {
-        _game.forEach(function(entry) {
+      // if ( typeof(tstore) !== "undefined" && tstore !== null ) {
+      // //   _game.forEach(function(entry) {
 
-          var found = false;
+      // // //     var found = false;
 
-          var title = [];
-          var cart = [];
-          var obj = {};
+      // // //     var title = [];
+      // // //     var cart = [];
+      // // //     var obj = {};
 
-          //this.passit = 'blueish';
-          console.log('entryobject', entry);
+      // // //     //this.passit = 'blueish';
+      // //     console.log('entryobject', entry);
 
-        })}else{
-        console.log('bad data');
-      }
+      // //   }
+      // //   )
+      // console.log('good cart data');
+      // }else{
+      //   console.log('bad data');
+      // }
 
       //console.log('_GAME', _game);
       var tstore1 = localStorage.getItem('tempstore');
       console.log('_GAME', tstore1);
-
+      weka.push(entry);
+    }
     //   for (var i=0; i < _game; i++) {
     //     weka.push(_game);
     //     // weka.push(items[itemId]);
     // }
-      weka.push(entry);
+      // weka.push(entry);
     // }
 
     localStorage.setItem('jackpotBetSlip', JSON.stringify(weka));
+    }
+  }
 
-}
-
-}
