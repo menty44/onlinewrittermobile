@@ -58,20 +58,20 @@ export class AutoscanPage {
                   console.log(data);
                   console.warn('response', JSON.stringify(data));
                   console.warn('responsescan', data.ok);
-                  localStorage.setItem('scan', JSON.stringify(data));
+                  // localStorage.setItem('scan', JSON.stringify(data));
                   if(data.ok === '00') {
-                    console.warn('we are inside yoh', localStorage.getItem('scan'));
-                      // loading.dismiss();
-                      // const toast = this.toastCtrl.create({
-                      //     message: 'Success ' ,
-                      //     position: 'bottom',
-                      //     duration: 500
-                      // });
-                      // toast.present();
+                    // console.warn('we are inside yoh', localStorage.getItem('scan'));
                       //const strdata = data;
-                      const findata = JSON.parse(data);
-                      this.oluochi = findata;
-                      // this.manualresults = findata;
+                      // const findata = JSON.parse(data);
+                      this.oluochi = data;
+                      //this.manualresults = findata;
+                      loading.dismiss();
+                      const toast = this.toastCtrl.create({
+                          message: 'Success ' ,
+                          position: 'bottom',
+                          duration: 1500
+                      });
+                      toast.present();
                   }
               },
               (error : any) =>
@@ -80,7 +80,7 @@ export class AutoscanPage {
                   const toast = this.toastCtrl.create({
                       message: 'Warning Product not found ' ,
                       position: 'bottom',
-                      duration: 3500
+                      duration: 2500
                   });
                   toast.present();
                   console.dir(error);

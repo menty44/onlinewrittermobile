@@ -58,9 +58,8 @@ export class ManualscanPage {
           //this.enteredcode = manualcode;
           if(!manualcode) {
             swal('Error', 'Please Enter the Product Code', 'error');
-          }
-
-          this.http
+          }else{
+            this.http
           .get('http://192.168.1.19:8080/biosearch?code=' + manualcode)
           .subscribe((data : any) =>
               {
@@ -80,7 +79,7 @@ export class ManualscanPage {
                       const toast = this.toastCtrl.create({
                           message: 'Success ' ,
                           position: 'bottom',
-                          duration: 500
+                          duration: 1500
                       });
                       toast.present();
                       //this.kuku = 'mmmh';
@@ -105,7 +104,7 @@ export class ManualscanPage {
       //     this.navCtrl.push('ScanPage');
       //     console.log('Error', err);
       // });
-
+          }
   }
 
     static mydetailsmanual() {
