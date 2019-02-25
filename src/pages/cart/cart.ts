@@ -49,7 +49,20 @@ export class CartPage {
 
   deleteone(code) {
 
-    var sellprice = [];
+      swal({
+        title: 'Are you sure?',
+        text: 'Once deleted, you will not be able to recover the Product!',
+        icon: 'warning',
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal('Poof! Your Product has been deleted!', {
+            icon: 'success',
+          });
+
+          var sellprice = [];
 
     console.log('delete one the object in the array');
     console.log('the index', code);
@@ -69,12 +82,19 @@ export class CartPage {
 
         localStorage.removeItem('productprice');
         this.sellprice = sellprice;
+        this.loadCart();
 
         return;
       }
     }
 
     this.items.splice(code, 1);
+        } else {
+          swal('Your Product is Intact!');
+        }
+      });
+
+    
 
   }
 
