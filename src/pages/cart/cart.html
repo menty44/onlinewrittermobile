@@ -31,6 +31,7 @@
 
 <ion-content style="background: linear-gradient(75deg, #488aff 50%, white 50%)!important;" padding>
     <button style="width: 100%" ion-button style="background: rgb(85, 141, 2); width:100%;" round>Procees to Pay</button>
+    <button (click)="deleteall()" style="width: 100%" ion-button color="moto" style="width:100%;" round>DELETE ALL PRODUCTS</button>
     <ion-card class="profile" *ngFor="let item of mycart; let i = index; let even = even; let odd = odd;" [ngClass]="{ odd: odd, even: even }">
         <ion-card-header >
             <h4 style="color: white!important;">{{i+1}} Product Name : {{item.name}}<ion-icon style="float: right!important;color: white!important;" name="cart"></ion-icon></h4>

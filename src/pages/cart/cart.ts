@@ -49,8 +49,7 @@ export class CartPage {
 
   deleteone(code) {
 
-      swal({
-        title: 'Are you sure?',
+       swal({title: 'Are you sure?',
         text: 'Once deleted, you will not be able to recover the Product!',
         icon: 'warning',
         buttons: true,
@@ -134,10 +133,14 @@ export class CartPage {
       // this.vibration.vibrate(1000);
     }
 
-    localStorage.setItem('jackpotBetSlip', JSON.stringify(cart));
+    // localStorage.setItem('jackpotBetSlip', JSON.stringify(cart));
     this.showdata = cart; // refresh the cart
-    localStorage.removeItem('productprice');
-    this.sellprice = sellprice;
+    // localStorage.removeItem('productprice');
+    // this.sellprice = sellprice;
+    this.mycart = [];
+    this.count = 0;
+    // this.loadCart();
+    // localStorage.setItem('jackpotBetSlip', JSON.stringify(cart));
     console.log('deleted');
 
   }
