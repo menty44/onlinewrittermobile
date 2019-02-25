@@ -111,7 +111,7 @@ export class LoginPage {
                   if(data.ok === '00') {
                       //this.oluoch = response.data;
                       // this.navCtrl.push('DashboardPage');
-                      
+
                       // Vibrate 2 seconds
                       // Pause for 1 second
                       // Vibrate for 2 seconds
@@ -133,6 +133,7 @@ export class LoginPage {
                           duration: 3500
                       });
                       toast.present();
+                      loading.dismiss();
                   }
               },
               (error : any) =>
@@ -143,6 +144,7 @@ export class LoginPage {
                       duration: 3500
                   });
                   toast.present();
+                  loading.dismiss();
                   console.dir(error);
                   console.warn('response', JSON.stringify(error));
               });

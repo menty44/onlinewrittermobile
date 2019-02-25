@@ -22,6 +22,8 @@ import { HTTP } from '@ionic-native/http';
 // import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
+import { Vibration } from '@ionic-native/vibration';
+
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
 export function createTranslateLoader(http: HttpClient) {
@@ -70,6 +72,7 @@ export function provideSettings(storage: Storage) {
     Items,
     User,
     Camera,
+    Vibration,
     SplashScreen,
     StatusBar,
       BarcodeScanner,

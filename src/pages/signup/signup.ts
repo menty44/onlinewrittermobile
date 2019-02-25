@@ -81,7 +81,7 @@ export class SignupPage {
     console.log(mobileno);
     console.log(email);
     console.log(password);
-
+    
     // Vibrate 2 seconds
     // Pause for 1 second
     // Vibrate for 2 seconds
