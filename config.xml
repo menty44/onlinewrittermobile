@@ -20,6 +20,8 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
     <platform name="android">
+        <preference name="APP_SECRET" value="3594bf29-7500-4a31-89b1-e638ced6bf4e" />
+        <resource-file src="google-services.json" target="app/google-services.json" />
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
@@ -74,7 +76,6 @@
         <splash height="1024" src="resources/ios/splash/Default-Portrait~ipad.png" width="768" />
         <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
-        <!--<splash height="2732" src="resources/ios/splash/Default@2x~universal~anyany.png" width="2732" />-->
         <splash src="res/screen/ios/Default@2x~universal~anyany.png" />
         <splash src="res/screen/ios/Default@3x~universal~anyany.png" />
         <splash src="www/splash/ios/Default@2x~universal~anyany.png" />
@@ -88,4 +89,7 @@
     <plugin name="phonegap-plugin-barcodescanner" spec="8.0.1" />
     <plugin name="cordova-plugin-advanced-http" spec="2.0.4" />
     <engine name="android" spec="7.1.4" />
+    <plugin name="cordova-plugin-appcenter-analytics" spec="^0.3.2" />
+    <plugin name="cordova-plugin-appcenter-crashes" spec="^0.3.2" />
+    <plugin name="cordova-plugin-appcenter-push" spec="^0.3.2" />
 </widget>

@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 // import { EmailPage }  from '../email/email';
 import { EmailPage } from '../email/email';
+import { MapPage } from '../map/map';
 
 /**
  * Generated class for the HelpPage page.
@@ -27,6 +28,10 @@ export class HelpPage {
 
   sendemail() {
     this.navCtrl.push('EmailPage');
+  }
+
+  location() {
+    this.navCtrl.push('MapPage');
   }
 
 }

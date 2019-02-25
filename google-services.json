@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "334825547451",
+    "firebase_url": "https://smartshopper-b197c.firebaseio.com",
+    "project_id": "smartshopper-b197c",
+    "storage_bucket": "smartshopper-b197c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:334825547451:android:1c64ae58f9a259b5",
+        "android_client_info": {
+          "package_name": "com.blaqueyard.smartshopper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "334825547451-q8i843o1l7p4ac24qc4b3efn8ma0t0ni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmaMhwOz39mFVjyOUQloNLDx33tq35MHU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
