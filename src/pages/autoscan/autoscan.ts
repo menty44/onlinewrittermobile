@@ -11,6 +11,8 @@ import {HttpHeaders} from '@angular/common/http';
 import {HttpClient} from '@angular/common/http';
 import {map} from "rxjs/operators/map";
 
+import _ from 'lodash';
+
 /**
  * Generated class for the AutoscanPage page.
  *
@@ -72,6 +74,60 @@ export class AutoscanPage {
                           duration: 1500
                       });
                       toast.present();
+
+                      var weka = JSON.parse(localStorage.getItem('jackpotBetSlip'));
+
+                        var found = false;
+
+                        if ((!weka) || (weka === undefined)) {
+
+                          weka = [];
+                        }
+
+                        for (var i = 0; i <= weka.length - 1; i++) {
+
+                          if (weka[i].productcode === weka.productcode) {
+
+                          }
+                        }
+
+                        if (!found) {
+                          //var _game = entry;
+                        //var weka = JSON.parse(localStorage.getItem('jackpotBetSlip'));
+                        var tstore = localStorage.getItem('jackpotBetSlip');
+                          var _game = JSON.parse(tstore);
+
+                          if ( typeof(tstore) !== "undefined" && tstore !== null ) {
+                            _.forEach(data, function(value) {
+                              console.log(value);
+                            });
+
+                            // _game.forEach(function(entry) {
+
+                            //   var found = false;
+
+                            //   var title = [];
+                            //   var cart = [];
+                            //   var obj = {};
+
+                            //   //this.passit = 'blueish';
+                            //   console.log('entryobject', entry);
+
+                            // })
+                          }else{
+                            console.log('bad data');
+                          }
+
+
+
+                          //console.log('_GAME', _game);
+                          var tstore1 = localStorage.getItem('tempstore');
+                          console.log('_GAME', data);
+                          //weka.push(_game);
+                          weka.push(data);
+                        }
+
+                        localStorage.setItem('jackpotBetSlip', JSON.stringify(weka));
                   }
               },
               (error : any) =>

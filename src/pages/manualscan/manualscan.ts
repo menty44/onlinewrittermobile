@@ -149,12 +149,14 @@ export class ManualscanPage {
               },
               (error : any) =>
               {
+                  loading.dismiss();
                   const toast = this.toastCtrl.create({
                       message: 'Warning Product not found ' ,
                       position: 'bottom',
                       duration: 3500
                   });
                   toast.present();
+                  
                   console.dir(error);
                   console.warn('response', JSON.stringify(error));
               });

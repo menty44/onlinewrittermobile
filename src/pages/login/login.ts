@@ -18,7 +18,7 @@ import {HttpHeaders} from '@angular/common/http';
 import {HttpClient} from '@angular/common/http';
 import {map} from "rxjs/operators/map";
 
-import { Vibration } from '@ionic-native/vibration';
+// import { Vibration } from '@ionic-native/vibration';
 
 
 @IonicPage()
@@ -46,7 +46,7 @@ export class LoginPage {
                 public translateService: TranslateService,
                 public http: HttpClient,
                 public toastCtrl: ToastController,
-                private vibration: Vibration,
+                // private vibration: Vibration,
                 public loadingCtrl : LoadingController) {
 
     this.translateService.get('LOGIN_ERROR').subscribe((value) => {
@@ -116,7 +116,7 @@ export class LoginPage {
                       // Pause for 1 second
                       // Vibrate for 2 seconds
                       // Patterns work on Android and Windows only
-                      this.vibration.vibrate([2000,1000,2000]);
+                      // this.vibration.vibrate([2000,1000,2000]);
 
                       loading.dismiss();
                       const toast = this.toastCtrl.create({
