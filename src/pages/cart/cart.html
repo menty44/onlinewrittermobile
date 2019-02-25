@@ -20,22 +20,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title >Cart has {{count}} Item</ion-title>
+    <ion-title >Cart Items<ion-icon style="float: right!important;color: #488aff!important;" name="cart">{{count}}</ion-icon></ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <ion-card class="profile" (click)="pushProfile()">
+    <ion-card class="profile" *ngFor="let item of mycart; let i = index;">
         <ion-card-header >
-            <h1 style="color: white!important;">Product Name : {{mycart.name}} <ion-icon style="float: right!important;color: white!important;" name="cart"></ion-icon></h1>
+            <h4 style="color: white!important;">{{i+1}} Product Name : {{item.name}}<ion-icon style="float: right!important;color: white!important;" name="cart"></ion-icon></h4>
         </ion-card-header>
         <ion-card-content style="color: white">
-            <!-- <span style="color: greenyellow">Product Name : {{cart.name}}</span><hr> -->
-                <span style="color: greenyellow">Product Code : {{mycart.productcode}}</span><hr style="color:gray;">
-                <span style="color: greenyellow">Price : KES {{mycart.sellprice}}</span><hr>
-                <span style="color: greenyellow">Desc :  {{mycart.description}}</span>
+            <!-- <span style="color: greenyellow">Product Name : {{item.name}}</span><hr> -->
+                <span style="color: greenyellow">Product Code : {{item.productcode}}</span><hr style="color:gray;">
+                <span style="color: greenyellow">Price : KES {{item.sellprice}}</span><hr>
+                <span style="color: greenyellow">Desc :  {{item.description}}</span>
         </ion-card-content>
     </ion-card>
 </ion-content>

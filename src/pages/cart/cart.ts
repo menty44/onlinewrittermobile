@@ -22,18 +22,24 @@ export class CartPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CartPage');
+    this.loadCart();
+  }
 
-    console.log('ionViewDidLoad DashboardPage');
-    // var count = localStorage.getItem('jackpotBetSlip');
-    // console.log('checkit', count);
-    // //var newcount = JSON.parse(count);
-    // // console.log('jackpotBetSlip length', JSON.parse(count));
-    // this.cartcount = (!count == null)  ? JSON.parse(count).length : 'zero';
-
+  loadCart() {
     var count = localStorage.getItem('jackpotBetSlip');
-    // console.log('jackpotBetSlip length', JSON.parse(count));
-    this.mycart = (!count == null)  ? JSON.parse(count) : 'No Items';
-    this.count = (!count == null)  ? JSON.parse(count).length : 'zero';
+    console.log('checkit', count);
+    var fincount = JSON.parse(count);
+    console.log('checkit fincount', fincount);
+    console.log('checkit fincount length', fincount.length);
+    // console.log('jackpotBetSlip length', JSON.parse(count));()
+    if(fincount.length >= 1) {
+      console.log('checkit am inside mehn', fincount);
+      this.mycart = fincount;
+      this.count = fincount.length;
+    }else {
+      this.mycart = 'No Items';
+      this.count = 'Zero';
+    }
   }
 
 }
