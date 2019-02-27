@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import swal from 'sweetalert';
-
+import _ from 'lodash';
 /**
  * Generated class for the CartPage page.
  *
@@ -21,6 +21,7 @@ export class CartPage {
   public showdata: any;
   public sellprice: any;
   public items: any;
+  public totalprice: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -40,6 +41,7 @@ export class CartPage {
     if(fincount.length >= 1) {
       console.log('checkit am inside mehn', fincount);
       this.mycart = fincount;
+      this.totalprice = _.sumBy(fincount, function(o) { return Number(o.sellprice); });
       this.count = fincount.length;
     }else {
       this.mycart = 'No Items';
@@ -49,7 +51,8 @@ export class CartPage {
 
   deleteone(code) {
 
-       swal({title: 'Are you sure?',
+       swal( {
+         title: 'Are you sure?',
         text: 'Once deleted, you will not be able to recover the Product!',
         icon: 'warning',
         buttons: true,
