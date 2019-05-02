@@ -51,50 +51,50 @@ export class CartPage {
 
   deleteone(code) {
 
-       swal( {
-         title: 'Are you sure?',
-        text: 'Once deleted, you will not be able to recover the Product!',
-        icon: 'warning',
-        buttons: true,
-        dangerMode: true,
-      })
-      .then((willDelete) => {
-        if (willDelete) {
-          swal('Poof! Your Product has been deleted!', {
-            icon: 'success',
-          });
+    //    swal( {
+    //      title: 'Are you sure?',
+    //     text: 'Once deleted, you will not be able to recover the Product!',
+    //     icon: 'warning',
+    //     buttons: true,
+    //     dangerMode: true,
+    //   })
+    //   .then((willDelete) => {
+    //     if (willDelete) {
+    //       swal('Poof! Your Product has been deleted!', {
+    //         icon: 'success',
+    //       });
 
-          var sellprice = [];
+    //       var sellprice = [];
 
-    console.log('delete one the object in the array');
-    console.log('the index', code);
+    // console.log('delete one the object in the array');
+    // console.log('the index', code);
 
-    var cart = JSON.parse(localStorage.getItem('jackpotBetSlip'));
+    // var cart = JSON.parse(localStorage.getItem('jackpotBetSlip'));
 
-    for (var i = 0; i <= cart.length - 1; i++) {
+    // for (var i = 0; i <= cart.length - 1; i++) {
 
-      if (cart[i].productcode === code) {
-        var sp = cart.splice(i, 1);
-        console.log('MYSPLICE', sp);
+    //   if (cart[i].productcode === code) {
+    //     var sp = cart.splice(i, 1);
+    //     console.log('MYSPLICE', sp);
 
-        localStorage.setItem('jackpotBetSlip', JSON.stringify(cart));
+    //     localStorage.setItem('jackpotBetSlip', JSON.stringify(cart));
 
-        this.showdata = cart; // refresh the cart
-        console.log('deleted');
+    //     this.showdata = cart; // refresh the cart
+    //     console.log('deleted');
 
-        localStorage.removeItem('productprice');
-        this.sellprice = sellprice;
-        this.loadCart();
+    //     localStorage.removeItem('productprice');
+    //     this.sellprice = sellprice;
+    //     this.loadCart();
 
-        return;
-      }
-    }
+    //     return;
+    //   }
+    // }
 
-    this.items.splice(code, 1);
-        } else {
-          swal('Your Product is Intact!');
-        }
-      });
+    // this.items.splice(code, 1);
+    //     } else {
+    //       swal('Your Product is Intact!');
+    //     }
+    //   });
 
     
 
