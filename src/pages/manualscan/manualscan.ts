@@ -65,7 +65,7 @@ export class ManualscanPage {
             swal('Error', 'Please Enter the Product Code', 'error');
           }else{
             this.http
-          .get('http://192.168.0.20:8080/biosearch?code=' + manualcode)
+          .get('http://ec2-3-14-152-255.us-east-2.compute.amazonaws.com:9090/biosearch?code=' + manualcode)
           .subscribe((data : any) =>
               {
                   // console.log('response', data);

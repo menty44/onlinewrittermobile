@@ -89,7 +89,7 @@ export class LoginPage {
       const headers : any = new HttpHeaders({'Content-Type': 'application/json'}),
           options   : any = {'email': email, 'password': password},
 
-          url: any = 'http://192.168.1.15:8080/login?';
+          url: any = 'http://ec2-3-14-152-255.us-east-2.compute.amazonaws.com:9090/login?';
 
       console.warn('test', JSON.stringify(options));
       console.warn('test', JSON.stringify(url));
@@ -101,7 +101,7 @@ export class LoginPage {
       //       })
 
       this.http
-          .get('http://192.168.1.15:8080/login?email=' + email + '&password=' + password)
+          .get('http://ec2-3-14-152-255.us-east-2.compute.amazonaws.com:9090/login?email=' + email + '&password=' + password)
           .subscribe((data : any) =>
               {
                   console.log(data);

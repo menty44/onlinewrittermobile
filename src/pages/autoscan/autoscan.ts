@@ -54,7 +54,7 @@ export class AutoscanPage {
           //this.results = barcodeData;
 
           this.http
-          .get('http://192.168.0.20:8080/biosearch?code=' + barcodeData.text)
+          .get('http://ec2-3-14-152-255.us-east-2.compute.amazonaws.com:9090/biosearch?code=' + barcodeData.text)
           .subscribe((data : any) =>
               {
                   console.log(data);
